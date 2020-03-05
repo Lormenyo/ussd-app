@@ -23,6 +23,8 @@ def ussdSession():
     print(text)
     print(textArray)
     print(userResponse)
+    sessionMenu = []
+
     # Screens
     firstMenu = '''CON Hello,
 
@@ -76,14 +78,30 @@ def ussdSession():
     # Session logic
     if text == 0  or text == '':
         menu = firstMenu
+        sessionMenu.append(menu)
     elif text == '1':
         menu = farmerMenu
+        sessionMenu.append(menu)
     elif text == '2':
         menu = merchantMenu
+        sessionMenu.append(menu)
     elif text == '1*1':
         menu = produceMenu
+        sessionMenu.append(menu)
+    elif text == '1*1*1':
+        produce = 'Cabbage'
+        menu = dateMenu
+        sessionMenu.append(menu)
+    elif text == '1*1*2':
+        produce = 'Tomatoes'
+        menu = dateMenu
+        sessionMenu.append(menu)
+    elif text == '1*1*3':
+        produce = 'Pineapple'
+        menu = dateMenu
+        sessionMenu.append(menu)
     elif userResponse == '0':
-        text = text[:-2]
+        menu = sessionMenu.pop(-2)
     #  More logic
 
     
