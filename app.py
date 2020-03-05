@@ -40,7 +40,7 @@ def ussdSession():
     0. BACK
     '''
 
-    ProduceMenu = '''CON Hello Farmer,
+    produceMenu = '''CON Hello Farmer,
     Please Select which produce will be ready
 
     1. Cabbage
@@ -80,8 +80,10 @@ def ussdSession():
         menu = farmerMenu
     elif userResponse == '2':
         menu = merchantMenu
+    elif text == '1*1':
+        menu = produceMenu
     elif userResponse == '1*1':
-        menu = merchantMenu
+        menu = produceMenu
     #  More logic
 
     
