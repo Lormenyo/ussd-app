@@ -81,7 +81,7 @@ def ussdSession():
     error = "END Invalid input"
 
     # Session logic
-    if userResponse == 0  or userResponse == '':
+    if userResponse == '0'  or userResponse == '':
         menu = firstMenu
        
     elif text == '1':
@@ -124,8 +124,8 @@ def ussdSession():
                 print("option ", produceOption)
                 menu = error
        
-    elif len(textArray[-2])>1:
-        confirmation =  text[-1]
+    elif len(textArray[-2]) == 5:
+        confirmation =  textArray[-1]
         print("confirmation ", confirmation)
         if confirmation == '1':
             menu = thankYou
