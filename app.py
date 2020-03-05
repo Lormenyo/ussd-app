@@ -119,12 +119,13 @@ def ussdSession():
             menu = error
         else:
             if produceOption == 1:
-                produce = 'Cabbage'
-            if produceOption == 2:
-                produce = 'Tomatoes'
-            if produceOption == 3:
-                produce = 'Pineapples'         
-            menu = confirmMenu(produce,date)  
+                menu = confirmMenu("Cabbage",date)
+            elif produceOption == 2:
+                menu = confirmMenu("Tomatoes",date)
+            elif produceOption == 3:
+                menu = confirmMenu("Pineapples",date)        
+            else:
+                menu = error
        
     #  More logic
 
