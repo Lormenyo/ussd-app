@@ -124,10 +124,10 @@ def ussdSession():
                 print("option ", produceOption)
                 menu = error
        
-    elif text[:3] == '1*1' and len(text) > 11:
-        confirmation =  textArray.pop()
+    elif text[:3] == '1*1' and len(text) > 14:
+        confirmation =  text[-1]
         print("confirmation", confirmation)
-        if confirmation == 1:
+        if confirmation == '1':
             menu = thankYou
         else:
             menu = firstMenu
