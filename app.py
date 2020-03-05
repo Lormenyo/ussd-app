@@ -1,13 +1,14 @@
 from flask import Flask, request, make_response, render_template
 import random
 import string
+import re
 
 
 app = Flask(__name__)
 
 def confirmMenu(produce,date):
     menu = '''CON Kindly confirm that %s will be ready on %s
-    
+
     1. Yes
     2. No
 
