@@ -73,12 +73,8 @@ def ussdSession():
     Please state the exact date(dd-mm-yy) the produce will be ready
 
     '''
-    secondMenu = '''CON Hackathon Company
+    thankYouMenu = '''CON Thank you so much.
 
-    4. Other thing to do
-    5. Even more thing to do
-    6. Last thing to do
-    0. BACK
     '''
     # More menu screens ...
 
@@ -128,6 +124,12 @@ def ussdSession():
                 print("option ", produceOption)
                 menu = error
        
+    elif text[:3] == '1*1' and len(text) > 11:
+        confirmation =  textArray.pop()
+        if confirmation == 1:
+            menu = thankYouMenu
+        else:
+            menu = firstMenu
     #  More logic
 
     
