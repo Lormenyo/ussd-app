@@ -101,8 +101,8 @@ def ussdSession():
         menu = dateMenu
         sessionMenu.append(menu)
     elif text[-1] == '0':
-        menu = sessionMenu.pop(-2)
-        print(menu)
+        text = text[:-1]
+       
     #  More logic
 
     
