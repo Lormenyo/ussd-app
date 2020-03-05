@@ -10,7 +10,7 @@ def index():
     ussdChannel = "*384*77771#" # Your ussd channel from Africa's Talking
     return render_template('index.html', channel=ussdChannel)
 
-@app.route('/ussd', methods=['POST', 'GET'])
+@app.route('/ussd', methods=['POST'])
 def ussdSession():
 
     sessionId   = request.values.get("sessionId", None)
