@@ -111,13 +111,13 @@ def ussdSession():
         menu = dateMenu
         
     elif text[:3] == '1*1' and len(text) > 3:
-        print("i have been detected ", textArray.pop())
-        x=re.search("^([1-9]|1[0-9]|2[0-9]|3[0-1])(.|-)([1-9]|1[0-2])(.|-|)20[0-9][0-9]$", textArray.pop())
-        print(x)
-        if x == None:
+        # print("i have been detected ", textArray.pop())
+        # x=re.search("^([1-9]|1[0-9]|2[0-9]|3[0-1])(.|-)([1-9]|1[0-2])(.|-|)20[0-9][0-9]$", textArray.pop())
+        # print(x)
+        if textArray.pop() == '':
             menu = error
         else:
-            date = x.group()
+            date = textArray.pop()
             menu = confirmMenu(produce,date)  
        
     #  More logic
