@@ -35,7 +35,6 @@ def ussdSession():
     print(textArray)
     print(userResponse)
     
-    produce = ''
     # Screens
     firstMenu = '''CON Hello,
 
@@ -99,25 +98,32 @@ def ussdSession():
         menu = produceMenu
         
     elif text == '1*1*1':
-        produce = 'Cabbage'
+        # produce = 'Cabbage'
         menu = dateMenu
         
     elif text == '1*1*2':
-        produce = 'Tomatoes'
+        # produce = 'Tomatoes'
         menu = dateMenu
       
     elif text == '1*1*3':
-        produce = 'Pineapple'
+        # produce = 'Pineapple'
         menu = dateMenu
         
     elif text[:3] == '1*1' and len(text) > 3:
         # print("i have been detected ", textArray.pop())
         # x=re.search("^([1-9]|1[0-9]|2[0-9]|3[0-1])(.|-)([1-9]|1[0-2])(.|-|)20[0-9][0-9]$", textArray.pop())
         # print(x)
+        date = textArray.pop()
+        produceOption = textArray.pop()
         if textArray.pop() == '':
             menu = error
         else:
-            date = textArray.pop()
+            if produceOption == 1:
+                produce = 'Cabbage'
+            if produceOption == 2:
+                produce = 'Tomatoes'
+            if produceOption == 3:
+                produce = 'Pineapples'         
             menu = confirmMenu(produce,date)  
        
     #  More logic
