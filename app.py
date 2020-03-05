@@ -20,7 +20,9 @@ def ussdSession():
 
     textArray    = text.split("*") if text else text
     userResponse = textArray[-1] if isinstance(textArray, list) else text
-
+    print(text)
+    print(textArray)
+    print(userResponse)
     # Screens
     firstMenu = '''CON Hello,
 
@@ -35,6 +37,16 @@ def ussdSession():
     2. Sell produce immediately
     3. Check farmer score 
     4. Ask for assistance
+    0. BACK
+    '''
+
+    ProduceMenu = '''CON Hello Farmer,
+    Please Select which produce will be ready
+
+    1. Cabbage
+    2. Tomatoes
+    3. Pineapple
+    0. BACK
     '''
 
     merchantMenu = '''CON Hello Merchant,
@@ -43,8 +55,13 @@ def ussdSession():
     2. Make Sale
     3. Check Merchant score 
     4. Ask for assistance
+    0. BACK
     '''
+    dateMenu = '''CON 
+    Please state the exact date(dd/mm/yy) 
+    the produce will be ready
 
+    '''
     secondMenu = '''CON Hackathon Company
 
     4. Other thing to do
@@ -54,7 +71,7 @@ def ussdSession():
     '''
     # More menu screens ...
 
-    error     = "END Invalid input"
+    error = "END Invalid input"
 
     # Session logic
     if userResponse == 0  or userResponse == '':
@@ -62,6 +79,8 @@ def ussdSession():
     elif userResponse == '1':
         menu = farmerMenu
     elif userResponse == '2':
+        menu = merchantMenu
+    elif userResponse == '1*1':
         menu = merchantMenu
     #  More logic
 
