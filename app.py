@@ -100,8 +100,9 @@ def ussdSession():
         produce = 'Pineapple'
         menu = dateMenu
         sessionMenu.append(menu)
-    elif userResponse == '0':
+    elif text[-1] == '0':
         menu = sessionMenu.pop(-2)
+        print(menu)
     #  More logic
 
     
