@@ -22,13 +22,29 @@ def ussdSession():
     userResponse = textArray[-1] if isinstance(textArray, list) else text
 
     # Screens
-    firstMenu = '''CON Hackathon Company
+    firstMenu = '''CON Hello,
 
-    1. First thing to do
-    2. Second thing to do
-    3. Third thing to do
-    98. MORE
+    1. Farmer
+    2. Merchant
+
     '''
+
+    farmerMenu = '''CON Hello Farmer,
+
+    1. Register produce availabilty date
+    2. Sell produce immediately
+    3. Check farmer score 
+    4. Ask for assistance
+    '''
+
+    merchantMenu = '''CON Hello Merchant,
+
+    1. Register a farmer
+    2. Make Sale
+    3. Check Merchant score 
+    4. Ask for assistance
+    '''
+
     secondMenu = '''CON Hackathon Company
 
     4. Other thing to do
@@ -43,8 +59,10 @@ def ussdSession():
     # Session logic
     if userResponse == 0  or userResponse == '':
         menu = firstMenu
-    elif userResponse == '98':
-        menu = secondMenu
+    elif userResponse == '1':
+        menu = farmerMenu
+    elif userResponse == '2':
+        menu = merchantMenu
     #  More logic
 
     
