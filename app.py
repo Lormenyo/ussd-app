@@ -35,7 +35,7 @@ def ussdSession():
     print(textArray)
     print(userResponse)
     
-
+    produce = ''
     # Screens
     firstMenu = '''CON Hello,
 
