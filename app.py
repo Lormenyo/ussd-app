@@ -73,7 +73,7 @@ def ussdSession():
     Please state the exact date(dd-mm-yy) the produce will be ready
 
     '''
-    thankYouMenu = '''CON Thank you so much.
+    thankYou = '''END Thank you so much.
 
     '''
     # More menu screens ...
@@ -126,8 +126,9 @@ def ussdSession():
        
     elif text[:3] == '1*1' and len(text) > 11:
         confirmation =  textArray.pop()
+        print("confirmation", confirmation)
         if confirmation == 1:
-            menu = thankYouMenu
+            menu = thankYou
         else:
             menu = firstMenu
     #  More logic
