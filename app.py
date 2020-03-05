@@ -124,9 +124,9 @@ def ussdSession():
                 print("option ", produceOption)
                 menu = error
        
-    elif text[:3] == '1*1' and len(text) > 14:
+    elif '-' in text and len(text)>14:
         confirmation =  text[-1]
-        print("confirmation", confirmation)
+        print("confirmation ", confirmation)
         if confirmation == '1':
             menu = thankYou
         else:
