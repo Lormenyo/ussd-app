@@ -125,6 +125,7 @@ def ussdSession():
             elif produceOption == 3:
                 menu = confirmMenu("Pineapples",date)        
             else:
+                print("option ", produceOption)
                 menu = error
        
     #  More logic
