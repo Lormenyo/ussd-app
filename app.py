@@ -74,16 +74,16 @@ def ussdSession():
     error = "END Invalid input"
 
     # Session logic
-    if userResponse == 0  or userResponse == '':
+    if text == 0  or text == '':
         menu = firstMenu
-    elif userResponse == '1':
+    elif text == '1':
         menu = farmerMenu
-    elif userResponse == '2':
+    elif text == '2':
         menu = merchantMenu
     elif text == '1*1':
         menu = produceMenu
-    elif userResponse == '1*1':
-        menu = produceMenu
+    # elif text == '1*1':
+    #     menu = produceMenu
     #  More logic
 
     
