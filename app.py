@@ -5,6 +5,16 @@ import string
 
 app = Flask(__name__)
 
+def confirmMenu(produce,date):
+    menu = '''CON Kindly confirm that %s will be ready on %s
+    
+    1. Yes
+    2. No
+
+    '''%(produce, date)
+    return menu
+
+
 @app.route('/')
 def index():
     ussdChannel = "*384*77771#" # Your ussd channel from Africa's Talking
@@ -23,7 +33,7 @@ def ussdSession():
     print(text)
     print(textArray)
     print(userResponse)
-    sessionMenu = []
+    
 
     # Screens
     firstMenu = '''CON Hello,
@@ -60,8 +70,7 @@ def ussdSession():
     0. BACK
     '''
     dateMenu = '''CON 
-    Please state the exact date(dd/mm/yy) 
-    the produce will be ready
+    Please state the exact date(dd-mm-yy) the produce will be ready
 
     '''
     secondMenu = '''CON Hackathon Company
@@ -76,32 +85,37 @@ def ussdSession():
     error = "END Invalid input"
 
     # Session logic
-    if text == 0  or text == '':
+    if userResponse == 0  or userResponse == '':
         menu = firstMenu
-        sessionMenu.append(menu)
+       
     elif text == '1':
         menu = farmerMenu
-        sessionMenu.append(menu)
+        
     elif text == '2':
         menu = merchantMenu
-        sessionMenu.append(menu)
-    elif text == '1*1':
+        
+    elif text == '1*1' or text == '1*2' :
         menu = produceMenu
-        sessionMenu.append(menu)
+        
     elif text == '1*1*1':
         produce = 'Cabbage'
         menu = dateMenu
-        sessionMenu.append(menu)
+        
     elif text == '1*1*2':
         produce = 'Tomatoes'
         menu = dateMenu
-        sessionMenu.append(menu)
+      
     elif text == '1*1*3':
         produce = 'Pineapple'
         menu = dateMenu
-        sessionMenu.append(menu)
-    elif text[-1] == '0':
-        text = text[:-1]
+        
+    elif text[:3] == '1*1' and len(text) > 3:
+        x=re.search("^([1-9] |1[0-9]| 2[0-9]|3[0-1])(.|-)([1-9] |1[0-2])(.|-|)20[0-9][0-9]$", text)
+        if x == None:
+            menu = error
+        else:
+            date = x.group()
+            menu = confirmMenu(produce,date)  
        
     #  More logic
 
