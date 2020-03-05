@@ -135,6 +135,7 @@ def ussdSession():
 
     
     else:
+        print(len(textArray))
         menu = error
 
     resp = make_response(menu, 200)
