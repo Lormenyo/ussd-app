@@ -118,11 +118,11 @@ def ussdSession():
         if textArray.pop() == '':
             menu = error
         else:
-            if produceOption == 1:
+            if produceOption == '1':
                 menu = confirmMenu("Cabbage",date)
-            elif produceOption == 2:
+            elif produceOption == '2':
                 menu = confirmMenu("Tomatoes",date)
-            elif produceOption == 3:
+            elif produceOption == '3':
                 menu = confirmMenu("Pineapples",date)        
             else:
                 print("option ", produceOption)
