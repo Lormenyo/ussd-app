@@ -82,8 +82,8 @@ def ussdSession():
         menu = merchantMenu
     elif text == '1*1':
         menu = produceMenu
-    # elif text == '1*1':
-    #     menu = produceMenu
+    elif userResponse == '0':
+        text = text[:-2]
     #  More logic
 
     
