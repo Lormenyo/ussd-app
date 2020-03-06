@@ -34,6 +34,7 @@ def ussdSession():
     print(text)
     print(textArray)
     print(userResponse)
+    print("length ",len(textArray))
     
     # Screens
     firstMenu = '''CON Hello,
