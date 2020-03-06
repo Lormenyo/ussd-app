@@ -85,7 +85,7 @@ def ussdSession():
     if userResponse == '0'  or userResponse == '':
         menu = firstMenu
 
-    elif userResponse == '98' or len(textArray) == 5:
+    elif userResponse == '98':
             menu = thankYou
 
     elif userResponse == '99':
