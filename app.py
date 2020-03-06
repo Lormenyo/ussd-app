@@ -84,6 +84,12 @@ def ussdSession():
     # Session logic
     if userResponse == '0'  or userResponse == '':
         menu = firstMenu
+
+    elif userResponse == '98':
+            menu = thankYou
+            
+    elif userResponse == '99':
+            menu = firstMenu
        
     elif text == '1':
         menu = farmerMenu
@@ -126,10 +132,7 @@ def ussdSession():
                 menu = error
        
   
-    elif userResponse == '98':
-            menu = thankYou
-    elif userResponse == '99':
-            menu = firstMenu
+
     #  More logic
 
     
