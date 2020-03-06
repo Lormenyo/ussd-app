@@ -9,8 +9,8 @@ app = Flask(__name__)
 def confirmMenu(produce,date):
     menu = '''CON Kindly confirm that %s will be ready on %s
 
-    1. Yes
-    2. No
+    98. Yes
+    99. No
 
     '''%(produce, date)
     return menu
@@ -125,12 +125,10 @@ def ussdSession():
                 print("option ", produceOption)
                 menu = error
        
-    elif len(text.split('*')) == 5:
-        confirmation =  textArray[-1]
-        print("confirmation ", confirmation)
-        if confirmation == '1':
+  
+    elif userResponse == '98':
             menu = thankYou
-        else:
+    elif userResponse == '99':
             menu = firstMenu
     #  More logic
 
